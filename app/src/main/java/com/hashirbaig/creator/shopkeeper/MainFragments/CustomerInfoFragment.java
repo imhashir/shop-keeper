@@ -77,7 +77,7 @@ public class CustomerInfoFragment extends Fragment{
                 try {
                     mCustomer.setNumber(s.toString());
                 } catch (NumberFormatException e) {
-                    Toast.makeText(getActivity(), "Invalid Number!", Toast.LENGTH_LONG);
+                    Toast.makeText(getActivity(), "Invalid Number!", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -98,7 +98,7 @@ public class CustomerInfoFragment extends Fragment{
                 try {
                     mCustomer.setPurchasePrice(Double.parseDouble(s.toString()));
                 } catch (NumberFormatException e) {
-                    Toast.makeText(getActivity(), "Invalid Price.", Toast.LENGTH_LONG);
+                    Toast.makeText(getActivity(), "Invalid Price.", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -141,7 +141,7 @@ public class CustomerInfoFragment extends Fragment{
                     CustomersData.get(getActivity()).add(mCustomer);
                     getActivity().finish();
                 } else {
-                    Toast.makeText(getActivity(), "One or more necessary fields are empty.", Toast.LENGTH_LONG);
+                    Toast.makeText(getActivity(), "One or more necessary fields are empty.", Toast.LENGTH_LONG).show();
                 }
             default:
                 return super.onOptionsItemSelected(item);

@@ -1,7 +1,14 @@
 package com.hashirbaig.creator.shopkeeper.HostingActivities;
 
-/**
- * Created by Hashir on 7/25/2016.
- */
-public class MainNavigationActivity {
+import android.support.v4.app.Fragment;
+
+import com.hashirbaig.creator.shopkeeper.MainFragments.MainNavigationFragment;
+import com.hashirbaig.creator.shopkeeper.SingleFragmentActivity;
+
+public class MainNavigationActivity extends SingleFragmentActivity{
+
+    @Override
+    public Fragment createFragment() {
+        return MainNavigationFragment.newInstance();
+    }
 }
