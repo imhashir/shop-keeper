@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="segment_background">
+        <item name="android:background">@drawable/background_segment</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
 </resources>
