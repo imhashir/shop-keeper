@@ -9,14 +9,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HostingActivities.CustomerInfoActivity"
-            android:label="@string/customer_info_activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            android:name=".HostingActivities.CustomerListActivity"
+            android:label="@string/customer_list">
 
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
+
         </activity>
+
+        <activity android:name=".HostingActivities.CustomerInfoActivity"/>
     </application>
 
 </manifest>

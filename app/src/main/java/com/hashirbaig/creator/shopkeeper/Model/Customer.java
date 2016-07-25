@@ -1,9 +1,11 @@
 package com.hashirbaig.creator.shopkeeper.Model;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Customer {
 
+    private UUID mUUID;
     private String mName;
     private double mPurchasePrice;
     private String mNumber;
@@ -12,6 +14,7 @@ public class Customer {
 
     public Customer() {
         mDate = new Date();
+        mUUID = UUID.randomUUID();
     }
 
     public String getName() {
@@ -60,5 +63,13 @@ public class Customer {
         } else {
             return false;
         }
+    }
+
+    public UUID getUUID() {
+        return mUUID;
+    }
+
+    public void setUUID(UUID UUID) {
+        mUUID = UUID;
     }
 }

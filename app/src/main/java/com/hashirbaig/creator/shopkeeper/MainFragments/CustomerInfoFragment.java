@@ -15,9 +15,12 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.hashirbaig.creator.shopkeeper.HostingActivities.CustomerInfoActivity;
 import com.hashirbaig.creator.shopkeeper.Model.Customer;
 import com.hashirbaig.creator.shopkeeper.Model.CustomersData;
 import com.hashirbaig.creator.shopkeeper.R;
+
+import java.util.UUID;
 
 public class CustomerInfoFragment extends Fragment{
 
@@ -35,7 +38,12 @@ public class CustomerInfoFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCustomer = new Customer();
+        UUID uuid = (UUID) getActivity().getIntent().getSerializableExtra(CustomerInfoActivity.KEY_UUID);
+        if(uuid == null) {
+            mCustomer = new Customer();
+        } else {
+            mCustomer = CustomersData.get(getActivity()).find(uuid);
+        }
         setHasOptionsMenu(true);
     }
 
@@ -48,6 +56,13 @@ public class CustomerInfoFragment extends Fragment{
         mNumber = (EditText) v.findViewById(R.id.mobile_number);
         mProduct = (EditText) v.findViewById(R.id.product_name);
         mPrice = (EditText) v.findViewById(R.id.sale_price);
+
+        if(mCustomer.getName() != null) {
+            mCustomerName.setText(mCustomer.getName());
+            mNumber.setText(mCustomer.getNumber());
+            mProduct.setText(mCustomer.getProduct());
+            mPrice.setText(Double.toString(mCustomer.getPurchasePrice()));
+        }
 
         mCustomerName.addTextChangedListener(new TextWatcher() {
             @Override

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class CustomersData {
 
@@ -32,5 +33,18 @@ public class CustomersData {
 
     public void add(Customer customer) {
         mCustomerList.add(customer);
+    }
+
+    public Customer get(int position) {
+        return mCustomerList.get(position);
+    }
+
+    public Customer find(UUID id) {
+        for(Customer customer : mCustomerList) {
+            if(customer.getUUID().equals(id)) {
+                return customer;
+            }
+        }
+        return null;
     }
 }
