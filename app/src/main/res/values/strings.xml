@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">ShopKeeper</string>
+
+    <!-- General Strings -->
     <string name="save">Save</string>
 
     <!-- Activities/Fragments Name -->
     <string name="customer_info_activity">Receipt</string>
+    <string name="customer_list">Customers Details</string>
 
     <!-- Customer Info Fragment -->
     <string name="customer_name_title">Customer Name</string>
@@ -12,17 +15,8 @@
     <string name="mobile_number_title">Mobile Number</string>
     <string name="customer_info_text">Customer Info</string>
     <string name="product_info_text">Product Info</string>
-    <string name="title_activity_navigation_activity_layout">MainActivity</string>
-    <string name="title_activity_main_navigation">Shop Keeper</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-    <string name="home">Home</string>
-    <string name="sections">Sections</string>
-    <string name="products">Products</string>
-    <string name="receipts">Receipts</string>
-    <string name="customer_list">Customers Details</string>
+    <!-- Customer List Fragment -->
+    <string name="product_purchased">Product Purchased: </string>
 
 </resources>

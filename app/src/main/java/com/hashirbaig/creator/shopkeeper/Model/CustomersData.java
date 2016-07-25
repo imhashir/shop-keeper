@@ -76,6 +76,20 @@ public class CustomersData {
         mDatabase.insert(CustomerTable.TABLE_NAME, null, getContentValues(customer));
     }
 
+    public void update(Customer customer) {
+        mDatabase.update(CustomerTable.TABLE_NAME, getContentValues(customer), CustomerTable.cols.UUID + " = ?", new String[]{customer.getUUID().toString()});
+    }
+
+    public void delete(Customer customer) {
+        mDatabase.delete(CustomerTable.TABLE_NAME, CustomerTable.cols.UUID + " = ?", new String[]{customer.getUUID().toString()});
+        for(int x = 0; x < mCustomerList.size(); x++) {
+            if(mCustomerList.get(x).getUUID().equals(customer.getUUID())) {
+                mCustomerList.remove(x);
+                return;
+            }
+        }
+    }
+
     public Customer get(int position) {
         return mCustomerList.get(position);
     }

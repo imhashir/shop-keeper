@@ -3,6 +3,7 @@ package com.hashirbaig.creator.shopkeeper.MainFragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -29,6 +30,8 @@ public class CustomerInfoFragment extends Fragment{
     private EditText mProduct;
     private EditText mPrice;
 
+    private boolean isEditing;
+
     private Customer mCustomer;
 
     public static CustomerInfoFragment newInstance() {
@@ -41,8 +44,10 @@ public class CustomerInfoFragment extends Fragment{
         UUID uuid = (UUID) getActivity().getIntent().getSerializableExtra(CustomerInfoActivity.KEY_UUID);
         if(uuid == null) {
             mCustomer = new Customer();
+            isEditing = false;
         } else {
             mCustomer = CustomersData.get(getActivity()).find(uuid);
+            isEditing = true;
         }
         setHasOptionsMenu(true);
     }
@@ -153,11 +158,22 @@ public class CustomerInfoFragment extends Fragment{
         switch (item.getItemId()) {
             case R.id.save_option:
                 if(mCustomer.isOK()) {
-                    CustomersData.get(getActivity()).add(mCustomer);
+                    if(!isEditing) {
+                        CustomersData.get(getActivity()).add(mCustomer);
+                    } else {
+                        CustomersData.get(getActivity()).update(mCustomer);
+                    }
                     getActivity().finish();
                 } else {
-                    Toast.makeText(getActivity(), "One or more necessary fields are empty.", Toast.LENGTH_LONG).show();
+                    Snackbar.make(getView(), "One or more necessary fields are empty.", Snackbar.LENGTH_LONG).show();
                 }
+                return true;
+            case R.id.delete_option:
+                if(isEditing) {
+                    CustomersData.get(getActivity()).delete(mCustomer);
+                }
+                getActivity().finish();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

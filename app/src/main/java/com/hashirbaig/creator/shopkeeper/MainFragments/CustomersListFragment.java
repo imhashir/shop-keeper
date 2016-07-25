@@ -73,17 +73,23 @@ public class CustomersListFragment extends Fragment{
     private class CustomerHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView mName;
+        private TextView mProductName;
+        private TextView mPriceText;
         private Customer mCustomer;
 
         public CustomerHolder(View v) {
             super(v);
             v.setOnClickListener(this);
             mName = (TextView) v.findViewById(R.id.customer_name);
+            mProductName = (TextView) v.findViewById(R.id.product_name);
+            mPriceText = (TextView) v.findViewById(R.id.price_text);
         }
 
         public void bindHolder(Customer c) {
             mCustomer = c;
             mName.setText(mCustomer.getName());
+            mProductName.setText(c.getProduct());
+            mPriceText.setText(Double.toString(c.getPurchasePrice()));
         }
 
         @Override
