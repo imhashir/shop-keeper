@@ -19,4 +19,7 @@
     <!-- Customer List Fragment -->
     <string name="product_purchased">Product Purchased: </string>
 
+    <!-- Navigation Bar Strings -->
+    <string name="customers_list">Customers List</string>
+
 </resources>

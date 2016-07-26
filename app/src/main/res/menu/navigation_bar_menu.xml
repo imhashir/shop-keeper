@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/customer_list"
+        android:icon="@drawable/customers_list_icon"
+        android:id="@+id/customer_list_nav"/>
+
+</menu>
