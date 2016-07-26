@@ -21,5 +21,9 @@
 
     <!-- Navigation Bar Strings -->
     <string name="customers_list">Customers List</string>
+    <string name="home_nav">Home</string>
+    <string name="sections_nav">Sections</string>
+    <string name="open_navigation_drawer">Open Navigation Drawer</string>
+    <string name="close_navigation_drawer">Close Navigation Drawer</string>
 
 </resources>
