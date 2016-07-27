@@ -7,7 +7,7 @@ public class Customer {
 
     private UUID mUUID;
     private String mName;
-    private double mPurchasePrice;
+    private Double mPurchasePrice;
     private String mNumber;
     private String mProduct;
     private Date mDate;
@@ -41,11 +41,11 @@ public class Customer {
         mProduct = product;
     }
 
-    public double getPurchasePrice() {
+    public Double getPurchasePrice() {
         return mPurchasePrice;
     }
 
-    public void setPurchasePrice(double purchasePrice) {
+    public void setPurchasePrice(Double purchasePrice) {
         mPurchasePrice = purchasePrice;
     }
 
