@@ -5,32 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:elevation="5dp"
-        android:background="@drawable/home_segment_back">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="346dp"
-            android:layout_height="120dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/create_new_receipt"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="end"
-            android:background="@drawable/circle_selector"
-            android:padding="10dp"
-            android:src="@drawable/add_new"
-            android:elevation="4dp"
-            android:id="@+id/add_receipt_home"
-            android:clickable="true"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:elevation="5dp"
+                android:background="@drawable/home_segment_back">
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="346dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/create_new_receipt"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/circle_selector"
+                    android:padding="10dp"
+                    android:src="@drawable/add_new"
+                    android:elevation="4dp"
+                    android:id="@+id/add_receipt_home"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:elevation="5dp"
+                android:background="@drawable/home_segment_back">
+
+                <ImageView
+                    android:layout_width="346dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/add_new_product"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/circle_selector"
+                    android:padding="10dp"
+                    android:src="@drawable/add_new"
+                    android:elevation="4dp"
+                    android:id="@+id/add_product_home"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

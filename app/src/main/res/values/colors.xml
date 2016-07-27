@@ -5,7 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- Block Segment Background -->
-    <color name="block_back">#69f2a3</color>
+    <color name="customer_block_back">#69f2a3</color>
+    <color name="product_block_back">#d698ff</color>
 
     <!-- Home Segment Background -->
     <color name="home_block_outline">#ffffff</color>

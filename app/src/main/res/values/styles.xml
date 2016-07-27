@@ -17,8 +17,13 @@
     </style>
 
 
-    <style name="segment_background">
-        <item name="android:background">@drawable/background_segment</item>
+    <style name="segment_background_customer_frag">
+        <item name="android:background">@drawable/customer_background_segment</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="segment_background_product_frag">
+        <item name="android:background">@drawable/product_background_segment</item>
         <item name="android:padding">5dp</item>
     </style>
 

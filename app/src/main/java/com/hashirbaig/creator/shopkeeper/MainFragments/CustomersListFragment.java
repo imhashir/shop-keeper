@@ -1,6 +1,5 @@
 package com.hashirbaig.creator.shopkeeper.MainFragments;
 
-import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -40,7 +39,7 @@ public class CustomersListFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.customers_list_fragment, container, false);
+        View v = inflater.inflate(R.layout.list_fragment, container, false);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.list_container);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

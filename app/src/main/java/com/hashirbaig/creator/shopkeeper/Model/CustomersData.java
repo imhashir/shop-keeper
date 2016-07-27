@@ -4,11 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v4.app.INotificationSideChannel;
 
 import com.hashirbaig.creator.shopkeeper.Database.CursorWrapperHelper;
-import com.hashirbaig.creator.shopkeeper.Database.DatabaseSchema;
-import com.hashirbaig.creator.shopkeeper.Database.DatabaseSchema.CustomerTable;
+import com.hashirbaig.creator.shopkeeper.Database.DatabaseSchema.TableCustomers;
 import com.hashirbaig.creator.shopkeeper.Database.ShopDBHelper;
 
 import java.util.ArrayList;
@@ -47,7 +45,7 @@ public class CustomersData {
 
     private void readDatabase() {
         Cursor cursor = mDatabase.query(
-                CustomerTable.TABLE_NAME,
+                TableCustomers.TABLE_CUSTOMERS,
                 null,
                 null,
                 null,
@@ -73,15 +71,15 @@ public class CustomersData {
 
     public void add(Customer customer) {
         mCustomerList.add(customer);
-        mDatabase.insert(CustomerTable.TABLE_NAME, null, getContentValues(customer));
+        mDatabase.insert(TableCustomers.TABLE_CUSTOMERS, null, getContentValues(customer));
     }
 
     public void update(Customer customer) {
-        mDatabase.update(CustomerTable.TABLE_NAME, getContentValues(customer), CustomerTable.cols.UUID + " = ?", new String[]{customer.getUUID().toString()});
+        mDatabase.update(TableCustomers.TABLE_CUSTOMERS, getContentValues(customer), TableCustomers.cols.UUID + " = ?", new String[]{customer.getUUID().toString()});
     }
 
     public void delete(Customer customer) {
-        mDatabase.delete(CustomerTable.TABLE_NAME, CustomerTable.cols.UUID + " = ?", new String[]{customer.getUUID().toString()});
+        mDatabase.delete(TableCustomers.TABLE_CUSTOMERS, TableCustomers.cols.UUID + " = ?", new String[]{customer.getUUID().toString()});
         for(int x = 0; x < mCustomerList.size(); x++) {
             if(mCustomerList.get(x).getUUID().equals(customer.getUUID())) {
                 mCustomerList.remove(x);
@@ -96,12 +94,12 @@ public class CustomersData {
 
     public ContentValues getContentValues(Customer customer) {
         ContentValues values = new ContentValues();
-        values.put(CustomerTable.cols.NAME, customer.getName());
-        values.put(CustomerTable.cols.DATE, customer.getDate().getTime());
-        values.put(CustomerTable.cols.UUID, customer.getUUID().toString());
-        values.put(CustomerTable.cols.NUMBER, customer.getNumber());
-        values.put(CustomerTable.cols.PRODUCT, customer.getProduct());
-        values.put(CustomerTable.cols.PRICE, customer.getPurchasePrice());
+        values.put(TableCustomers.cols.NAME, customer.getName());
+        values.put(TableCustomers.cols.DATE, customer.getDate().getTime());
+        values.put(TableCustomers.cols.UUID, customer.getUUID().toString());
+        values.put(TableCustomers.cols.NUMBER, customer.getNumber());
+        values.put(TableCustomers.cols.PRODUCT, customer.getProduct());
+        values.put(TableCustomers.cols.PRICE, customer.getPurchasePrice());
 
         return values;
     }

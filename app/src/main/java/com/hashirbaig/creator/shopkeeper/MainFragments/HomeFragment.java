@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.hashirbaig.creator.shopkeeper.HostingActivities.CustomerInfoActivity;
+import com.hashirbaig.creator.shopkeeper.HostingActivities.ProductInfoActivity;
 import com.hashirbaig.creator.shopkeeper.R;
 
 public class HomeFragment extends Fragment{
 
     private ImageView mAddReceiptButton;
+    private ImageView mAddProductButton;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -31,11 +33,20 @@ public class HomeFragment extends Fragment{
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         mAddReceiptButton = (ImageView) v.findViewById(R.id.add_receipt_home);
+        mAddProductButton = (ImageView) v.findViewById(R.id.add_product_home);
 
         mAddReceiptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = CustomerInfoActivity.newIntent(getActivity(), null);
+                startActivity(i);
+            }
+        });
+
+        mAddProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = ProductInfoActivity.newIntent(getActivity(), null);
                 startActivity(i);
             }
         });

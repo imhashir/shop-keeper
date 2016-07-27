@@ -7,6 +7,7 @@
     <!-- Activities/Fragments Name -->
     <string name="customer_info_activity">Receipt</string>
     <string name="customer_list">Customers Details</string>
+    <string name="product_info_activity">Product Info</string>
 
     <!-- Customer Info Fragment -->
     <string name="customer_name_title">Customer Name</string>
@@ -16,11 +17,23 @@
     <string name="customer_info_text">Customer Info</string>
     <string name="product_info_text">Product Info</string>
 
+    <!-- Product Info Fragment -->
+    <string name="product_name_title">Product Name</string>
+    <string name="product_id_title">Serial Number</string>
+    <string name="product_stock_title">Amount in Stock</string>
+    <string name="product_price_title">Price</string>
+    <string name="product_info_title">Product</string>
+    <string name="product_market_title">Stock Details</string>
+
+    <!-- Product List Fragment -->
+    <string name="amount_in_stock">Amount in Stock: </string>
+
     <!-- Customer List Fragment -->
     <string name="product_purchased">Product Purchased: </string>
 
     <!-- Navigation Bar Strings -->
     <string name="customers_list">Customers List</string>
+    <string name="products_list">Products List</string>
     <string name="home_nav">Home</string>
     <string name="sections_nav">Sections</string>
     <string name="open_navigation_drawer">Open Navigation Drawer</string>

@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.hashirbaig.creator.shopkeeper.MainFragments.CustomersListFragment;
 import com.hashirbaig.creator.shopkeeper.MainFragments.HomeFragment;
+import com.hashirbaig.creator.shopkeeper.MainFragments.ProductsListFragment;
 import com.hashirbaig.creator.shopkeeper.R;
 
 public class HomeActivity extends AppCompatActivity{
@@ -67,6 +68,9 @@ public class HomeActivity extends AppCompatActivity{
                 break;
             case R.id.home_nav:
                 fragmentClass = HomeFragment.class;
+                break;
+            case R.id.products_list_nav:
+                fragmentClass = ProductsListFragment.class;
                 break;
             default:
                 fragmentClass = CustomersListFragment.class;

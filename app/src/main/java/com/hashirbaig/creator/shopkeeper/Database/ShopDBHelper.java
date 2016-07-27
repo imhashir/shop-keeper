@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.hashirbaig.creator.shopkeeper.Database.DatabaseSchema.CustomerTable;
+import com.hashirbaig.creator.shopkeeper.Database.DatabaseSchema.*;
 
 public class ShopDBHelper extends SQLiteOpenHelper{
 
@@ -17,16 +17,27 @@ public class ShopDBHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + CustomerTable.TABLE_NAME + "(" +
+        db.execSQL("create table " + TableCustomers.TABLE_CUSTOMERS + "(" +
                 " _id integer primary key autoincrement, " +
-                CustomerTable.cols.NAME + ", " +
-                CustomerTable.cols.UUID + ", " +
-                CustomerTable.cols.NUMBER + ", " +
-                CustomerTable.cols.PRICE + ", " +
-                CustomerTable.cols.PRODUCT + ", " +
-                CustomerTable.cols.DATE +
+                TableCustomers.cols.NAME + ", " +
+                TableCustomers.cols.UUID + ", " +
+                TableCustomers.cols.NUMBER + ", " +
+                TableCustomers.cols.PRICE + ", " +
+                TableCustomers.cols.PRODUCT + ", " +
+                TableCustomers.cols.DATE +
                 ")"
         );
+
+        db.execSQL("create table " + DatabaseSchema.TableProducts.TABLE_PRODUCTS + "(" +
+                " _id integer primary key autoincrement, " +
+                TableProducts.cols.NAME + ", " +
+                TableProducts.cols.UUID + ", " +
+                TableProducts.cols.SERIAL + ", " +
+                TableProducts.cols.STOCK + ", " +
+                TableProducts.cols.PRICE +
+                ")"
+        );
+
     }
 
     @Override
