@@ -17,7 +17,8 @@
             android:label="@string/customer_info_activity"/>
 
         <activity android:name=".HostingActivities.HomeActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/HomeTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>

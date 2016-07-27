@@ -6,4 +6,7 @@
 
     <!-- Block Segment Background -->
     <color name="block_back">#69f2a3</color>
+
+    <!-- Home Segment Background -->
+    <color name="home_block_outline">#ffffff</color>
 </resources>
