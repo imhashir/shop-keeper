@@ -27,6 +27,11 @@
         <item name="android:padding">5dp</item>
     </style>
 
+    <style name="segment_background_backup_frag">
+        <item name="android:background">@drawable/backup_background_segment</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

@@ -40,4 +40,10 @@
     <string name="close_navigation_drawer">Close Navigation Drawer</string>
     <string name="select_spinner_item_text">Select Item</string>
 
+    <!-- Backup & Restore Fragment -->
+    <string name="local_backup_restore_heading">Local Backup</string>
+    <string name="online_backup_restore_heading">Online Backup</string>
+    <string name="backup_text">Backup!</string>
+    <string name="restore_text">Restore!</string>
+
 </resources>

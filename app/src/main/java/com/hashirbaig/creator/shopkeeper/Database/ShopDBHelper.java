@@ -28,7 +28,7 @@ public class ShopDBHelper extends SQLiteOpenHelper{
                 ")"
         );
 
-        db.execSQL("create table " + DatabaseSchema.TableProducts.TABLE_PRODUCTS + "(" +
+        db.execSQL("create table " + TableProducts.TABLE_PRODUCTS + "(" +
                 " _id integer primary key autoincrement, " +
                 TableProducts.cols.NAME + ", " +
                 TableProducts.cols.UUID + ", " +
