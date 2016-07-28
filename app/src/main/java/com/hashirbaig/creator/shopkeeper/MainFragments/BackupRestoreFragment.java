@@ -39,23 +39,6 @@ public class BackupRestoreFragment extends Fragment {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == REQUEST_STORAGE_PERMISSION) {
-            boolean storageGranted = true;
-            for(int x = 0; x < grantResults.length && storageGranted != false; x++) {
-                if(grantResults[x] != PackageManager.PERMISSION_GRANTED) {
-                    storageGranted = false;
-                }
-            }
-
-            if(storageGranted == true) {
-                localBackup();
-            }
-        }
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
@@ -110,7 +93,7 @@ public class BackupRestoreFragment extends Fragment {
         } catch (IOException ioe) {
             ioe.printStackTrace();
             SimpleTextDialog
-                    .newInstance("An error occurred while backing up data")
+                    .newInstance("An error occurred while backing up data", "Error!")
                     .show(getFragmentManager(), TAG_ERROR_BACKUP);
         }
     }
@@ -122,7 +105,7 @@ public class BackupRestoreFragment extends Fragment {
         } catch (IOException ioe) {
             ioe.printStackTrace();
             SimpleTextDialog
-                    .newInstance("An error occurred while restoring data")
+                    .newInstance("An error occurred while restoring data", "Error!")
                     .show(getFragmentManager(), TAG_ERROR_BACKUP);
         }
     }

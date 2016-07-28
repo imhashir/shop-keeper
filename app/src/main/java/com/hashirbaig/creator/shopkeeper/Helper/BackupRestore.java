@@ -18,7 +18,7 @@ public class BackupRestore {
             = "/data/data/com.hashirbaig.creator.shopkeeper/databases/";
 
     private static final String mUserDirectory
-            = Environment.getExternalStorageDirectory() + "/ShopKeeper/";
+            = Environment.getExternalStorageDirectory() + "/ShopKeeper/Backups/";
 
     public static class Local {
         public static void backupDatabase() throws IOException {
@@ -28,7 +28,13 @@ public class BackupRestore {
             File outputFolder = new File(mUserDirectory);
             if(!outputFolder.exists()) {
                 outputFolder.mkdir();
+            } else {
+                File[] currentFile = outputFolder.listFiles();
+                if(currentFile.length > 0) {
+                    currentFile[0].delete();
+                }
             }
+
 
             String dateFormat = DateFormat.format("yyyy-MM-dd_HH-mm-ss", new Date()).toString();
             OutputStream fos = new FileOutputStream(mUserDirectory + dateFormat + ".db", true);
