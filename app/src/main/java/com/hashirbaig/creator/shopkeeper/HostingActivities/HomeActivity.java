@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.hashirbaig.creator.shopkeeper.MainFragments.BackupRestoreFragment;
 import com.hashirbaig.creator.shopkeeper.MainFragments.CustomersListFragment;
 import com.hashirbaig.creator.shopkeeper.MainFragments.HomeFragment;
 import com.hashirbaig.creator.shopkeeper.MainFragments.ProductsListFragment;
@@ -71,6 +72,9 @@ public class HomeActivity extends AppCompatActivity{
                 break;
             case R.id.products_list_nav:
                 fragmentClass = ProductsListFragment.class;
+                break;
+            case R.id.backup_restore_nav:
+                fragmentClass = BackupRestoreFragment.class;
                 break;
             default:
                 fragmentClass = CustomersListFragment.class;

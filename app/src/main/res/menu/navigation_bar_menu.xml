@@ -30,4 +30,17 @@
         </menu>
     </item>
 
+    <item
+        android:title="@string/tools_nav">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:title="@string/backup_restore_nav"
+                    android:icon="@drawable/backup_restore_icon_nav"
+                    android:id="@+id/backup_restore_nav"/>
+            </group>
+        </menu>
+    </item>
+
 </menu>

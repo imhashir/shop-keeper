@@ -36,6 +36,10 @@
     <string name="products_list">Products List</string>
     <string name="home_nav">Home</string>
     <string name="sections_nav">Sections</string>
+    <string name="tools_nav">Tools</string>
+    <string name="backup_restore_nav">Backup &amp; Restore</string>
+
+    <!-- Customer Info Fragment -->
     <string name="open_navigation_drawer">Open Navigation Drawer</string>
     <string name="close_navigation_drawer">Close Navigation Drawer</string>
     <string name="select_spinner_item_text">Select Item</string>
