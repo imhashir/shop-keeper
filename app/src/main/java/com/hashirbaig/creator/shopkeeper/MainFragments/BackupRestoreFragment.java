@@ -15,11 +15,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.api.client.http.FileContent;
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.model.File;
 import com.hashirbaig.creator.shopkeeper.Dialogs.SimpleTextDialog;
 import com.hashirbaig.creator.shopkeeper.Helper.BackupRestore;
 import com.hashirbaig.creator.shopkeeper.R;
 
 import java.io.IOException;
+import java.util.Collections;
 
 public class BackupRestoreFragment extends Fragment {
 
@@ -34,6 +39,8 @@ public class BackupRestoreFragment extends Fragment {
 
     private static final int REQUEST_STORAGE_PERMISSION = 0;
 
+    private GoogleApiClient mGoogleApiClient;
+
     public static BackupRestoreFragment newInstance() {
         return new BackupRestoreFragment();
     }
@@ -41,6 +48,10 @@ public class BackupRestoreFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    private void getLocalStoragePermissions() {
         if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat
                     .requestPermissions(
@@ -64,6 +75,7 @@ public class BackupRestoreFragment extends Fragment {
         mLocalBackup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getLocalStoragePermissions();
                 if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     localBackup();
                 } else {
@@ -75,6 +87,7 @@ public class BackupRestoreFragment extends Fragment {
         mLocalRestore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getLocalStoragePermissions();
                 if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     localRestore();
                 } else {

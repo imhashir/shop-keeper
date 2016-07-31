@@ -14,18 +14,18 @@ import java.util.Date;
 
 public class BackupRestore {
 
-    private static final String mAppDirectory
+    public static final String APP_DIRECTORY
             = "/data/data/com.hashirbaig.creator.shopkeeper/databases/";
 
-    private static final String mUserDirectory
+    public static final String USER_DIRECTORY
             = Environment.getExternalStorageDirectory() + "/ShopKeeper/Backups/";
 
     public static class Local {
         public static void backupDatabase() throws IOException {
-            File appFile = new File(mAppDirectory + ShopDBHelper.DATABASE_NAME);
+            File appFile = new File(APP_DIRECTORY + ShopDBHelper.DATABASE_NAME);
             FileInputStream fis = new FileInputStream(appFile);
 
-            File outputFolder = new File(mUserDirectory);
+            File outputFolder = new File(USER_DIRECTORY);
             if(!outputFolder.exists()) {
                 outputFolder.mkdir();
             } else {
@@ -37,7 +37,7 @@ public class BackupRestore {
 
 
             String dateFormat = DateFormat.format("yyyy-MM-dd_HH-mm-ss", new Date()).toString();
-            OutputStream fos = new FileOutputStream(mUserDirectory + dateFormat + ".db", true);
+            OutputStream fos = new FileOutputStream(USER_DIRECTORY + dateFormat + ".db", true);
             byte[] buffer = new byte[1024];
             int length;
 
@@ -50,15 +50,15 @@ public class BackupRestore {
         }
 
         public static void restoreDatabase() throws IOException{
-            File userFiles = new File(mUserDirectory);
+            File userFiles = new File(USER_DIRECTORY);
             File[] files = userFiles.listFiles();
             FileInputStream fis = new FileInputStream(files[0]);
 
-            File outputFolder = new File(mAppDirectory);
+            File outputFolder = new File(APP_DIRECTORY);
             if(!outputFolder.exists()) {
                 outputFolder.mkdir();
             }
-            FileOutputStream fos = new FileOutputStream(mAppDirectory + ShopDBHelper.DATABASE_NAME);
+            FileOutputStream fos = new FileOutputStream(APP_DIRECTORY + ShopDBHelper.DATABASE_NAME);
             byte[] buffer = new byte[1024];
             int length;
 
